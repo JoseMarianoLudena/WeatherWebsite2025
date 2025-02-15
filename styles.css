@@ -1,0 +1,314 @@
+/* 🌍 Global Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* 📦 Main Container */
+.container {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* 🏠 Sidebar */
+.sidebar {
+    width: 25%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.sidebar input {
+    padding: 12px;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.sidebar button {
+    padding: 12px;
+    width: 85%;
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+.sidebar button:hover {
+    background: #e6b800;
+}
+
+/* 📊 Weather Main */
+.weather-main {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* 🔄 Top Section Layout */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+/* 📅 Weekly Forecast (Left) */
+.forecast-section {
+    width: 50%;
+    height: 20px; /* Reduce height */
+   
+
+}
+
+.forecast-section h3 {
+    text-align: center;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Space between forecast cards */
+}
+
+
+.forecast-card {
+    width: 80%; /* Reduce width to prevent space conflicts */
+    max-width: 300px; /* Ensures the cards don’t stretch too much */
+    margin: 0 auto; /* Center the cards */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+.forecast-card:hover {
+    transform: scale(1.05);
+}
+
+.forecast-card img {
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+}
+
+/* ☀️ Weather Header (Right) */
+.weather-header {
+    width: 50%;
+    text-align: center;
+
+  
+}
+
+.weather-header h2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.weather-header img {
+    width: 100px;
+    margin: 10px;
+}
+
+.weather-header p {
+    font-size: 20px;
+}
+
+/* 🌿 Air Quality */
+.air-quality {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+/* 📊 Weather Graph (Full Bottom) */
+.graph-section {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chart-container {
+    width: 100%;
+    height: 180px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .weather-main {
+        width: 100%;
+    }
+
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast-section,
+    .weather-header {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+
+.toggle-btn {                                                               
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.toggle-btn::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.toggle-btn.active {
+    background: #ddd;
+    color: black;
+}
+
+.toggle-btn.active::before {
+    left: 30px;
+    background: white;
+}
+
+/* Add text (C and F) inside the button */
+.toggle-btn span {
+    z-index: 2;
+}
+
+/*theme button*/
+.theme-toggle {
+    margin-top: 15px;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: #222;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.theme-toggle::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+.theme-toggle.active {
+    background: whitesmoke;
+    color: black;
+}
+
+/*circle of the button*/
+.theme-toggle.active::before {
+    left: 30px;
+    background: #222;
+}
+
+/* Dark mode styling */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .weather-main {
+    background: #000000c7;
+    
+}
+
+.dark-mode .sidebar {
+    background: #0000007b;
+}
+
+.dark-mode .forecast-card {
+    background: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar for Search -->
+        <div class="sidebar">
+            <h1>Weather <br>App 🌤️</h1>
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button onclick="getWeather()">Search</button>
+
+            <!-- Theme Toggle -->
+            <div id="toggleTheme" class="theme-toggle" onclick="toggleTheme()">
+                <span>☀️</span>
+                <span>🌙</span>
+            </div>   
+        </div>
+
+        <!-- Main Weather Info -->
+        <div class="weather-main">
+            <!-- Top Section: Weather Header (Left) + Weekly Forecast (Right) -->
+            <div class="top-section">
+                <div class="weather-header">
+                    <h2 id="cityName">-</h2>
+                    <img id="weatherIcon" src="" alt="Weather Icon">
+                    <p id="temperature">--°C</p>
+                    <div class="toggle-container">
+                        <div id="toggleTemp" class="toggle-btn" onclick="toggleTemperature()">
+                            <span>°C</span>
+                            <span>°F</span>
+                        </div>
+                    </div>
+                    <p id="description">--</p>
+                    <p id="extraInfo">💨 Wind: -- m/s <br> 💧 Humidity: --%</p>
+                    <p id="airQuality" class="air-quality">🌍 Air Quality: --</p>
+                </div>
+
+                <div class="forecast-section">
+                    <h3>7-Day Forecast</h3>
+                    <div id="weeklyForecast" class="forecast-container"></div>
+                </div>
+            </div>
+
+            <!-- Weather Graph at the bottom -->
+            <div class="graph-section">
+                <h3>Temperature Graph</h3>
+                <div class="chart-container">
+                    <canvas id="weatherChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
