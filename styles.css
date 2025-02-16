@@ -26,6 +26,64 @@ body {
     overflow: hidden;
 }
 
+/* styles.css */
+/* 🌍 Global Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* 📦 Main Container */
+.container {
+    display: flex;
+    width: 95%;
+    max-width: 1200px;
+    min-height: 600px;
+    background: url('welcomeimage.jpg') no-repeat center center; 
+    background-size: cover; /* Ensure the image covers the container */
+    opacity: 5;
+    border-radius: 20px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    color: white; 
+    
+}
+/* Welcome Screen */
+.welcome-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-screen img {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.welcome-screen h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.welcome-screen p {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+
 /* 🏠 Sidebar */
 .sidebar {
     width: 300px;

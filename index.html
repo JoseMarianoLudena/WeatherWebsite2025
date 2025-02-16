@@ -14,44 +14,54 @@
             <h1>WEATHER <br>APP 🌤️</h1>
             <input type="text" id="cityInput" placeholder="Enter city name...">
             <button onclick="getWeather()">Search</button>
-
+            
             <!-- Theme Toggle -->
             <div id="toggleTheme" class="theme-toggle" onclick="toggleTheme()">
                 <span>☀️</span>
                 <span>🌙</span>
-            </div>   
+            </div>
         </div>
 
         <!-- Main Weather Info -->
         <div class="weather-main">
-            <!-- Top Section: Weather Header (Left) + Weekly Forecast (Right) -->
-            <div class="top-section">
-                <div class="weather-header">
-                    <h2 id="cityName">-</h2>
-                    <img id="weatherIcon" src="" alt="Weather Icon">
-                    <p id="temperature">--°C</p>
-                    <div class="toggle-container">
-                        <div id="toggleTemp" class="toggle-btn" onclick="toggleTemperature()">
-                            <span>°C</span>
-                            <span>°F</span>
-                        </div>
-                    </div>
-                    <p id="description">--</p>
-                    <p id="extraInfo">💨 Wind: -- m/s <br> 💧 Humidity: --%</p>
-                    <p id="airQuality" class="air-quality">🌍 Air Quality: --</p>
-                </div>
+            <!-- Welcome Screen -->
+            <div id="welcomeScreen" class="welcome-screen">
 
-                <div class="forecast-section">
-                    <h3>7-Day Forecast</h3>
-                    <div id="weeklyForecast" class="forecast-container"></div>
-                </div>
+                <h2>Welcome to W-APP</h2>
+                <p style="color: black;"><strong>Don't get caught off guard, get WAPPed in!</strong></p>
             </div>
 
-            <!-- Weather Graph at the bottom -->
-            <div class="graph-section">
-                <h3>Temperature Graph</h3>
-                <div class="chart-container">
-                    <canvas id="weatherChart"></canvas>
+            <!-- Weather Content (Initially Hidden) -->
+            <div id="weatherContent" class="weather-content" style="display: none;">
+                <!-- Top Section: Weather Header (Left) + Weekly Forecast (Right) -->
+                <div class="top-section">
+                    <div class="weather-header">
+                        <h2 id="cityName">-</h2>
+                        <img id="weatherIcon" src="" alt="Weather Icon">
+                        <p id="temperature">--°C</p>
+                        <div class="toggle-container">
+                            <div id="toggleTemp" class="toggle-btn" onclick="toggleTemperature()">
+                                <span>°C</span>
+                                <span>°F</span>
+                            </div>
+                        </div>
+                        <p id="description">--</p>
+                        <p id="extraInfo">💨 Wind: -- m/s <br> 💧 Humidity: --%</p>
+                        <p id="airQuality" class="air-quality">🌍 Air Quality: --</p>
+                    </div>
+
+                    <div class="forecast-section">
+                        <h3>7-Day Forecast</h3>
+                        <div id="weeklyForecast" class="forecast-container"></div>
+                    </div>
+                </div>
+
+                <!-- Weather Graph at the bottom -->
+                <div class="graph-section">
+                    <h3>Temperature Graph</h3>
+                    <div class="chart-container">
+                        <canvas id="weatherChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

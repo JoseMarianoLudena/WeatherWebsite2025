@@ -1,4 +1,4 @@
-const API_KEY = "2885ffebe59b135e95c1e8896a12881b";  // Replace with your OpenWeather API key
+const API_KEY = "2885ffebe59b135e95c1e8896a12881b";
 
 async function getWeather() {
     const city = document.getElementById("cityInput").value;
@@ -16,6 +16,15 @@ async function getWeather() {
             return;
         }
 
+        // Hide welcome screen and show weather content
+        document.getElementById("welcomeScreen").style.display = "none";
+        document.getElementById("weatherContent").style.display = "block";
+
+        // Change the background of the container
+        const container = document.querySelector('.container');
+        container.style.background = 'linear-gradient(135deg, #2c3e50, #3498db)'; // Change to a solid color or remove the image
+
+        // Rest of your existing JavaScript code remains the same
         // 🌍 Update Weather Info
         document.getElementById("cityName").textContent = weatherData.name;
         document.getElementById("temperature").textContent = `${Math.round(weatherData.main.temp)}°C`;
@@ -34,11 +43,11 @@ async function getWeather() {
         
         // 📅 Fetch 7-Day Forecast
         getForecast(weatherData.coord.lat, weatherData.coord.lon);
-        
     } catch (error) {
         console.error("Error fetching weather:", error);
     }
 }
+
 
 // 🌍 **Fetch Air Quality Data**
 async function getAirQuality(lat, lon) {
